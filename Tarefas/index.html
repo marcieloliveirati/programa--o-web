@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+   <html>
+       <head>
+            <title>Meu primeiro app Vue </title>
+            <script src="https://unpkg.com/vue@3"> </script>
+       </head>
+       <body>
+        <div id="app">
+            <h1>Reutilizando componentes</h1>
+            <button-counter></button-counter>
+            <button-counter></button-counter>
+            <button-counter></button-counter>
+            <button-counter></button-counter>
+            </div>
+            <script>
+            const app = Vue.createApp({})
+            app.component("button-counter", {
+            data() {
+            return {
+            count: 0
+            }
+            },
+            template: `<button v-on:click="count++">
+            Você clicou {{ count }} vezes.
+            </button>`
+            })
+            app.mount('#app')
+            </script>
+ </body>
+</html>
